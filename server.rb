@@ -5,7 +5,7 @@ require './file_reader'
 configurations = YAML.load_file('config/config.yaml')
 
 class Server
-  attr_accessor :response, :socket
+  attr_accessor :response, :socket, :request
 
   def initialize(port)
     @response = "HTTP/1.1 200 OK \r\n Content-Type: text/plain \r\n\r\n"
@@ -14,7 +14,7 @@ class Server
 
   def serve
     while session = socket.accept
-      request = session.gets
+      self.request = session.gets
       html_contents = read_html_contents
 
       session.puts "#{response} #{html_contents}"

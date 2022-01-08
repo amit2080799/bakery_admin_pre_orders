@@ -4,7 +4,6 @@ class FileReader
 
   def initialize(path)
     @path = path
-    @file = nil
   end
 
   def open
