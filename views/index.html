@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>
+      Bakery Admin Pre Orders
+    </title>
+
+    <style type="text/css">
+      form {
+        border: 3px solid #f1f1f1;
+        width: 30%;
+      }
+
+      input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #1e90ff;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
+      .login-form__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+      }
+
+      label {
+        float: left;
+        color: #00BFFF
+      }
+    </style>
+  </head>
+
+  <body>
+      <div class="login-form__wrapper">
+        <form action="/login" class="login_form">
+         <div class="container">
+           <input type="text" name="uname" placeholder="Username" required>
+
+           <input type="password" name="psw" placeholder="Password" required>
+
+           <button type="submit"> Login </button>
+         </div>
+
+        </form>
+      </div>
+  </body>
+</html>
