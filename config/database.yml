@@ -1,0 +1,6 @@
+---
+  development:
+    - database: bakery_admin_pre_orders
+    - host: localhost
+    - user: root
+    - password: test1234
