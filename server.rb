@@ -26,15 +26,15 @@ class Server
         html_contents = read_html_contents('views/index.html')
       elsif path == '/login'
         self.params = parse_params
-        puts params['password']
-        encryped_password = Digest::SHA256.hexdigest(params['password'])
-        puts encryped_password
+        encryped_password = encrypt_password
       end
 
       session.puts "#{response} #{html_contents}"
       session.close
     end
   end
+
+  private
 
   def read_html_contents(file_path)
     file = FileReader.new(file_path)
@@ -48,6 +48,10 @@ class Server
     parsed_qs = UrlParser.new(session).parse
     parsed_qs.split('&').each { |qe| params[qe.split('=').first] = qe.split('=')[1] }
     params
+  end
+
+  def encrypt_password
+    Digest::SHA256.hexdigest(params['password'])
   end
 end
 
